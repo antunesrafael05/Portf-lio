@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio profissional – projetos, habilidades e contato." />
+  <meta property="og:title" content="Seu Nome – Desenvolvedor Front-end" />
+  <meta property="og:description" content="Portfólio profissional – projetos, habilidades e contato." />
+  <meta property="og:type" content="website" />
+  <title>Portfólio – Rafael Antunes de Souza</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+
+    /* Navbar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #0d0d0d;
+      padding: 1rem 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-container a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: color 0.3s, border-bottom 0.3s;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-container a:hover {
+      color: #e50914;
+      border-bottom: 2px solid #e50914;
+    }
+
+    /* Rolagem suave */
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      scroll-margin-top: 80px;
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: #e50914;
+      margin-bottom: 2rem;
+    }
+
+    /* Hero */
+    #hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding-top: 120px;
+    }
+    #hero .intro {
+      max-width: 500px;
+    }
+    .highlight {
+      color: #e50914;
+    }
+    .buttons {
+      margin-top: 1rem;
+    }
+    .btn {
+      background-color: #e50914;
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      margin-right: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .btn:hover {
+      background-color: #b20710;
+    }
+    .btn.ghost {
+      background-color: transparent;
+      border: 2px solid #e50914;
+      color: #e50914;
+    }
+    .btn.ghost:hover {
+      background-color: #e50914;
+      color: #fff;
+    }
+    .profile-pic img {
+      max-width: 250px;
+      border-radius: 50%;
+      border: 4px solid #e50914;
+    }
+
+    /* Projetos */
+    .projetos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .projetos-grid article {
+      background-color: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+    .projetos-grid article h3 {
+      color: #e50914;
+    }
+    .projetos-grid article a {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #fff;
+      background-color: #e50914;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    .projetos-grid article a:hover {
+      background-color: #b20710;
+    }
+
+    /* Formação */
+    #formacao ul {
+      list-style: none;
+      padding: 0;
+      max-width: 700px;
+      margin: auto;
+    }
+    #formacao li {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #e50914;
+      border-radius: 5px;
+    }
+
+    /* Habilidades */
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .skill span {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .bar {
+      background-color: #333;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    .fill {
+      background-color: #e50914;
+      height: 10px;
+    }
+
+    /* Sobre mim */
+    #sobre p {
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Contato */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, textarea {
+      padding: 0.7rem;
+      border-radius: 5px;
+      border: 1px solid #e50914;
+      background-color: #1a1a1a;
+      color: #fff;
+    }
+    button.btn {
+      align-self: flex-start;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #0d0d0d;
+      margin-top: 3rem;
+    }
+    footer ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 0;
+    }
+    footer a {
+      color: #e50914;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <a href="#hero">Início</a>
+        <a href="#sobre">Sobre Mim</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#formacao">Formação</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div class="intro">
+      <h2>Olá, sou <span class="highlight">Rafael Antunes de Souza</span></h2>
+      <p>Desenvolvedor Front-end apaixonado por criar experiências digitais únicas e responsivas.</p>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou estudante de Engenharia de Software, apaixonado pelo desenvolvimento de soluções tecnológicas que aliem eficiência, inovação e qualidade. Tenho interesse em programação, design de sistemas e boas práticas de desenvolvimento, buscando sempre expandir meus conhecimentos e aprimorar minhas habilidades técnicas. Comprometido com o aprendizado contínuo, procuro transformar desafios em oportunidades de crescimento e contribuir de maneira significativa em projetos acadêmicos e profissionais.</p>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projetos-grid">
+      <article>
+        <h3>Projeto 1</h3>
+        <p>Descrição breve do projeto.</p>
+        <a href="#" target="_blank" rel="noopener">Ver Demo</a>
+      </article>
+      <article>
+        <h3>Projeto 2</h3>
+        <p>Descrição breve do projeto.</p>
+        <a href="#" target="_blank" rel="noopener">Ver Demo</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="formacao">
+    <h2>Formação Acadêmica</h2>
+    <ul>
+      <li><strong>Estudante de Engenharia de Software</strong> – Uninter (2025)</li>
+    </ul>
+  </section>
+
+  <section id="habilidades">
+    <h2>Habilidades</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <span>HTML</span>
+        <div class="bar"><div class="fill" style="width: 90%"></div></div>
+      </div>
+      <div class="skill">
+        <span>CSS</span>
+        <div class="bar"><div class="fill" style="width: 85%"></div></div>
+      </div>
+      <div class="skill">
+        <span>JavaScript</span>
+        <div class="bar"><div class="fill" style="width: 80%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <form action="https://formspree.io/f/{SEU_ID}" method="POST">
+      <label>
+        Nome:
+        <input type="text" name="nome" required />
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        Mensagem:
+        <textarea name="mensagem" required></textarea>
+      </label>
+      <button class="btn" type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rafael Antunes de Souza. Todos os direitos reservados.</p>
+    <ul>
+      <li><a href="https://github.com/seuusuario" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://linkedin.com/in/seuusuario" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:seuemail@email.com">Email</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
